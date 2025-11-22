@@ -8,4 +8,3 @@ pnpm install
 
 ### 启动服务
 pnpm run dev
-s

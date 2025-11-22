@@ -1,4 +1,5 @@
 import './App.css'
+import { RestaurantPage } from './pages/restaurant/index'
 
 export function App(props: {
   onRender?: () => void
@@ -7,7 +8,7 @@ export function App(props: {
 
   return (
     <view className='App'>
-      <text className='HelloWorld'>hello world</text>
+      <RestaurantPage />
     </view>
   )
 }
