@@ -1,4 +1,5 @@
 import { RestaurantHeader } from './components/RestaurantHeader'
+import { DealList } from './components/ DealList'
 import type { RestaurantInfo } from '../../types/restaurant'
 import restaurantDefaultCover from '../../assets/default-cover.png'
 // 测试数据
@@ -20,6 +21,7 @@ export function RestaurantPage() {
   return (
     <view>
       <RestaurantHeader restaurant={mockRestaurant} />
+      <DealList />
     </view>
   )
 }
