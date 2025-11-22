@@ -1,10 +1,15 @@
 .deal-list-container {
-  display: flex;
-  flex-direction: row;
   padding-left: 16px; /* 与封面图左边缘对齐 */
   padding-right: 16px;
-  gap: 12px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+}
+
+.deal-list-item {
+  width: 120px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.deal-list-item:last-child {
+  margin-right: 0;
 }
 
