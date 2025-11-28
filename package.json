@@ -12,7 +12,9 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@lynx-js/react": "^0.114.3"
+    "@lynx-js/react": "^0.114.3",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.3",

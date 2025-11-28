@@ -1,0 +1,153 @@
+[
+  {
+    "dealId": "1",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减10",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【神仙下午茶】椒麻鸡+椒麻鱼+配菜+超大杯柠檬茶",
+    "price": 168,
+    "originalPrice": 298,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "2",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减15",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【招牌套餐】椒麻鸡+椒麻鱼+配菜+超大杯柠檬茶",
+    "price": 158,
+    "originalPrice": 288,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "3",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "12:88:88",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【超值双人餐】椒麻鸡+配菜+两杯柠檬茶",
+    "price": 128,
+    "originalPrice": 228,
+    "buttonText": "立即抢购"
+  },
+  {
+    "dealId": "4",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减20",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【经典套餐】椒麻鱼+配菜+超大杯柠檬茶",
+    "price": 148,
+    "originalPrice": 268,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "5",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减10",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【精选套餐】椒麻鸡+椒麻鱼+配菜+超大杯柠檬茶",
+    "price": 178,
+    "originalPrice": 308,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "6",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "12:88:88",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【超值单人餐】椒麻鸡+配菜+柠檬茶",
+    "price": 88,
+    "originalPrice": 158,
+    "buttonText": "立即抢购"
+  },
+  {
+    "dealId": "7",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减25",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【豪华套餐】椒麻鸡+椒麻鱼+配菜+超大杯柠檬茶+小食",
+    "price": 198,
+    "originalPrice": 358,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "8",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减12",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【经典双人餐】椒麻鱼+配菜+两杯柠檬茶",
+    "price": 138,
+    "originalPrice": 248,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "9",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "12:88:88",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【超值三人餐】椒麻鸡+椒麻鱼+配菜+三杯柠檬茶",
+    "price": 218,
+    "originalPrice": 388,
+    "buttonText": "立即抢购"
+  },
+  {
+    "dealId": "10",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减18",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【精选双人餐】椒麻鸡+配菜+两杯柠檬茶+小食",
+    "price": 148,
+    "originalPrice": 268,
+    "buttonText": "抢购"
+  }
+]
+

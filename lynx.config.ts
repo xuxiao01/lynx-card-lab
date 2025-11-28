@@ -4,15 +4,26 @@ import { pluginQRCode } from '@lynx-js/qrcode-rsbuild-plugin'
 import { pluginReactLynx } from '@lynx-js/react-rsbuild-plugin'
 import { pluginTypeCheck } from '@rsbuild/plugin-type-check'
 
-export default defineConfig({
-  plugins: [
-    pluginQRCode({
-      schema(url) {
-        // We use `?fullscreen=true` to open the page in LynxExplorer in full screen mode
-        return `${url}?fullscreen=true`
+export default defineConfig(() => {
+  return {
+    plugins: [
+      pluginQRCode({
+        schema(url) {
+          return `${url}?fullscreen=true`
+        },
+      }),
+      pluginReactLynx(),
+      pluginTypeCheck(),
+    ],
+
+    // 开发环境代理配置
+    server: {
+      proxy: {
+        '/api': {
+          target: 'http://localhost:4000',
+          changeOrigin: true,
+        },
       },
-    }),
-    pluginReactLynx(),
-    pluginTypeCheck(),
-  ],
+    },
+  }
 })
