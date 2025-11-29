@@ -42,7 +42,7 @@
     "dealTitle": "【超值双人餐】椒麻鸡+配菜+两杯柠檬茶",
     "price": 128,
     "originalPrice": 228,
-    "buttonText": "立即抢购"
+    "buttonText": "抢购"
   },
   {
     "dealId": "4",
@@ -87,7 +87,7 @@
     "dealTitle": "【超值单人餐】椒麻鸡+配菜+柠檬茶",
     "price": 88,
     "originalPrice": 158,
-    "buttonText": "立即抢购"
+    "buttonText": "抢购"
   },
   {
     "dealId": "7",
@@ -132,7 +132,7 @@
     "dealTitle": "【超值三人餐】椒麻鸡+椒麻鱼+配菜+三杯柠檬茶",
     "price": 218,
     "originalPrice": 388,
-    "buttonText": "立即抢购"
+    "buttonText": "抢购"
   },
   {
     "dealId": "10",

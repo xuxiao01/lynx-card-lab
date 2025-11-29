@@ -3,50 +3,8 @@ import { DealList } from './components/ DealList'
 import type { RestaurantInfo } from '../../types/restaurant'
 import { useEffect, useState } from 'react'
 import { getShops } from '../../services/shop'
+import { processImageUrl } from '../../utils/url'
 import defaultCover from '../../assets/default-cover.png'
-
-/**
- * 获取前端服务器地址
- */
-function getFrontendURL(): string {
-  // 从当前访问地址自动获取
-  if (typeof window !== 'undefined' && window.location) {
-    const { protocol, hostname, port } = window.location
-    // 如果有端口，使用端口；否则使用默认端口
-    const actualPort = port || (import.meta.env.VITE_DEV_PORT || '3001')
-    return `${protocol}//${hostname}:${actualPort}`
-  }
-  
-  // 降级方案：使用环境变量
-  return import.meta.env.VITE_DEV_URL || 'http://192.168.0.100:3001'
-}
-
-/**
- * 处理图片路径
- * 如果是相对路径，转换为可访问的完整 URL
- */
-function processImageUrl(url: string): string {
-  // 如果已经是完整 URL，直接返回
-  if (url.startsWith('http://') || url.startsWith('https://')) {
-    return url
-  }
-  
-  // 如果是后端返回的静态资源路径（如 /static/image/xxx.png）
-  // 在 Lynx 环境中需要转换为完整 URL
-  if (url.startsWith('/static/')) {
-    const isLynx = typeof __MAIN_THREAD__ !== 'undefined'
-    if (isLynx) {
-      // Lynx 环境：自动获取前端服务器的完整 URL
-      const frontendURL = getFrontendURL()
-      return `${frontendURL}${url}`
-    }
-    // 浏览器环境：保持相对路径
-    return url
-  }
-  
-  // 其他情况使用默认图片
-  return defaultCover
-}
 
 export function RestaurantPage() {
   const [restaurant, setRestaurant] = useState<RestaurantInfo | null>(null)
@@ -67,7 +25,7 @@ export function RestaurantPage() {
           const shop = shops[0]
           const processedShop = {
             ...shop,
-            restaurantCover: processImageUrl(shop.restaurantCover),
+            restaurantCover: processImageUrl(shop.restaurantCover, defaultCover),
           }
           console.log('处理后的图片路径:', processedShop.restaurantCover)
           setRestaurant(processedShop)

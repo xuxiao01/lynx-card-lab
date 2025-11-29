@@ -1,88 +1,77 @@
 import { DealCard } from './DealCard'
 import type { DealItem } from '../../../types/restaurant'
+import { useEffect, useState } from 'react'
+import { getDeals } from '../../../services/shop'
+import { processImageUrl } from '../../../utils/url'
 import foodDefaultImage from '../../../assets/food-default.png'
 import './DealList.css'
 
 export function DealList() {
-  // 写死的 mock 数据，添加更多数据以支持横向滚动
-  const mockDeals: DealItem[] = [
-    {
-      dealId: '1',
-      dealImage: foodDefaultImage,
-      badges: [
-        {
-          text: '特惠补贴',
-          subText: '减10',
-          type: 'normal',
-        },
-      ],
-      dealTitle: '【神仙下午茶】椒麻鸡+椒麻鱼+配菜+超大杯柠檬茶',
-      price: 168,
-      originalPrice: 298,
-      buttonText: '抢购',
-    },
-    {
-      dealId: '2',
-      dealImage: foodDefaultImage,
-      badges: [
-        {
-          text: '特惠补贴',
-          subText: '减10',
-          type: 'normal',
-        },
-      ],
-      dealTitle: '【神仙下午茶】椒麻鸡+椒麻鱼+配菜+超大杯柠檬茶',
-      price: 168,
-      originalPrice: 298,
-      buttonText: '抢购',
-    },
-    {
-      dealId: '3',
-      dealImage: foodDefaultImage,
-      badges: [
-        {
-          text: '特惠补贴',
-          subText: '减10',
-          type: 'normal',
-        },
-      ],
-      dealTitle: '【神仙下午茶】椒麻鸡+椒麻鱼+配菜+超大杯柠檬茶',
-      price: 168,
-      originalPrice: 298,
-      buttonText: '抢购',
-    },
-    {
-      dealId: '4',
-      dealImage: foodDefaultImage,
-      badges: [
-        {
-          text: '特惠补贴',
-          subText: '减10',
-          type: 'normal',
-        },
-      ],
-      dealTitle: '【神仙下午茶】椒麻鸡+椒麻鱼+配菜+超大杯柠檬茶',
-      price: 168,
-      originalPrice: 298,
-      buttonText: '抢购',
-    },
-    {
-      dealId: '5',
-      dealImage: foodDefaultImage,
-      badges: [
-        {
-          text: '特惠补贴',
-          subText: '减10',
-          type: 'normal',
-        },
-      ],
-      dealTitle: '【神仙下午茶】椒麻鸡+椒麻鱼+配菜+超大杯柠檬茶',
-      price: 168,
-      originalPrice: 298,
-      buttonText: '抢购',
-    },
-  ]
+  const [deals, setDeals] = useState<DealItem[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
+  useEffect(() => {
+    async function fetchDeals() {
+      try {
+        console.log('开始获取团购数据...')
+        setLoading(true)
+        
+        // 获取餐厅 ID 为 '1' 的团购商品
+        const dealsData = await getDeals('1')
+        console.log('✅ 获取团购数据成功！', dealsData)
+        
+        if (dealsData && dealsData.length > 0) {
+          // 处理图片路径
+          const processedDeals = dealsData.map(deal => ({
+            ...deal,
+            dealImage: processImageUrl(deal.dealImage, foodDefaultImage),
+          }))
+          setDeals(processedDeals)
+        } else {
+          setError('没有找到团购数据')
+        }
+      } catch (err) {
+        console.error('❌ 获取团购数据失败:', err)
+        setError(err instanceof Error ? err.message : '获取数据失败')
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchDeals()
+  }, [])
+
+  // 加载中状态
+  if (loading) {
+    return (
+      <view className='deal-list-container' style={{ padding: '20px', textAlign: 'center' }}>
+        <text style={{ fontSize: '14px', color: '#999' }}>加载团购中...</text>
+      </view>
+    )
+  }
+
+  // 错误状态
+  if (error) {
+    return (
+      <view className='deal-list-container' style={{ padding: '20px', textAlign: 'center' }}>
+        <text style={{ fontSize: '14px', color: 'red' }}>
+          {error}
+        </text>
+      </view>
+    )
+  }
+
+  // 无数据状态
+  if (deals.length === 0) {
+    return (
+      <view className='deal-list-container' style={{ padding: '20px', textAlign: 'center' }}>
+        <text style={{ fontSize: '14px', color: '#999' }}>暂无团购商品</text>
+      </view>
+    )
+  }
+
+  // 正常渲染
   return (
     <list
       className='deal-list-container'
@@ -90,7 +79,7 @@ export function DealList() {
       list-type='single'
       span-count={1}
     >
-      {mockDeals.map((deal) => (
+      {deals.map((deal) => (
         <list-item
           key={deal.dealId}
           item-key={`deal-${deal.dealId}`}
