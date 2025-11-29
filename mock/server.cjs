@@ -66,6 +66,7 @@ app.post('/api/deals', (req, res) => {
   }
 })
 
-app.listen(4000, () => {
+app.listen(4000, '0.0.0.0', () => {
   console.log('Mock API 运行在 http://localhost:4000')
+  console.log('局域网访问: http://192.168.0.100:4000')
 })
