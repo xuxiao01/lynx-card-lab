@@ -1,47 +1,36 @@
 import type { BaseResponse } from '../types/common'
 
 /**
- * 获取当前访问的主机地址（自动获取域名和端口）
- */
-function getHostURL(): string {
-  // 尝试从 window.location 获取（Lynx 环境可能支持）
-  if (typeof window !== 'undefined' && window.location) {
-    const { protocol, hostname } = window.location
-    // 返回协议 + 域名，例如 http://192.168.0.100
-    return `${protocol}//${hostname}`
-  }
-  
-  // 如果无法获取，使用环境变量配置
-  return import.meta.env.VITE_DEV_HOST || 'http://192.168.0.100'
-}
-
-/**
  * 获取 API 基础 URL
- * 开发环境下，Lynx 可能需要完整的 URL
+ * 
+ * Lynx 真机环境说明：
+ * - window、window.location 都不可用
+ * - 必须使用完整的 http://IP:PORT 格式
+ * - 不能使用 localhost，必须使用真实 IP
  */
 function getBaseURL(): string {
-  // 在开发环境中，如果是 Lynx 环境，使用完整 URL
-  if (import.meta.env.DEV) {
-    // 检测是否在 Lynx 环境中
-    const isLynx = typeof __MAIN_THREAD__ !== 'undefined'
-    
-    if (isLynx) {
-      // Lynx 环境：自动获取当前访问的域名 + 后端端口
-      // 注意：Lynx 无法访问 localhost，需要使用真实 IP
-      const host = getHostURL()
-      const backendPort = import.meta.env.VITE_API_PORT || '4000'
-      return `${host}:${backendPort}`
-    } else {
-      // 浏览器环境：使用相对路径，通过代理访问
-      return ''
-    }
-  }
+  // 检测是否在 Lynx 环境中
+  const isLynx = typeof __MAIN_THREAD__ !== 'undefined'
   
-  // 生产环境：使用相对路径或配置的 API 地址
-  return import.meta.env.VITE_API_BASE_URL || ''
+  if (isLynx) {
+    // Lynx 环境：使用完整 URL（真机和开发环境都需要）
+    // 优先使用环境变量，否则使用默认 IP
+    const apiHost = import.meta.env.VITE_API_HOST || 'http://192.168.0.100:4000'
+    
+    console.log('[HTTP] Lynx 环境检测:')
+    console.log('  - API Host:', apiHost)
+    console.log('  - 环境:', import.meta.env.DEV ? '开发' : '生产')
+    
+    return apiHost
+  } else {
+    // 浏览器环境：使用相对路径，通过代理访问
+    console.log('[HTTP] 浏览器环境，使用代理')
+    return ''
+  }
 }
 
-const baseURL = getBaseURL()
+// 在每次请求时动态获取 baseURL，而不是在模块加载时固定
+// 这样可以确保在真机环境中也能正确获取
 
 /**
  * HTTP 请求配置
@@ -59,8 +48,17 @@ async function request<T = any>(
 ): Promise<BaseResponse<T>> {
   const { params, ...fetchConfig } = config
 
+  // 动态获取 baseURL（每次请求时获取，确保真机环境正确）
+  const baseURL = getBaseURL()
+  
   // 构建完整 URL
   let fullURL = baseURL + url
+  
+  // 调试日志
+  console.log('[HTTP] 请求信息:')
+  console.log('  - baseURL:', baseURL)
+  console.log('  - path:', url)
+  console.log('  - fullURL:', fullURL)
 
   // 处理查询参数
   if (params) {

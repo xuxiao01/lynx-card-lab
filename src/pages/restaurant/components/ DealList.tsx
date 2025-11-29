@@ -3,6 +3,7 @@ import type { DealItem } from '../../../types/restaurant'
 import { useEffect, useState } from 'react'
 import { getDeals } from '../../../services/shop'
 import { processImageUrl } from '../../../utils/url'
+import { usePerformanceMetrics } from '../../../hooks/usePerformanceMetrics'
 import foodDefaultImage from '../../../assets/food-default.png'
 import './DealList.css'
 
@@ -10,6 +11,9 @@ export function DealList() {
   const [deals, setDeals] = useState<DealItem[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+
+  // 启用性能监控
+  usePerformanceMetrics()
 
   useEffect(() => {
     async function fetchDeals() {
@@ -78,6 +82,9 @@ export function DealList() {
       scroll-orientation='horizontal'
       list-type='single'
       span-count={1}
+      // Lynx 性能监控标记：标记团购列表为首屏关键内容
+      // 当此元件渲染完成时，触发 Actual FMP 性能指标上报
+      __lynx_timing_flag="__lynx_timing_actual_fmp"
     >
       {deals.map((deal) => (
         <list-item

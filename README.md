@@ -1,39 +1,109 @@
 ## douyin_search_lynx_exercise
-抖音搜索培训营题目
 
-## 使用方式
+抖音搜索培训营题目 - 基于 Lynx + TypeScript 的餐厅团购页面
 
-### 安装依赖
+## 🚀 快速开始
+
+### 1. 安装依赖
+
 ```bash
 pnpm install
 ```
 
-### 启动 Mock API 服务
+### 2. 配置环境变量（首次必做）⚠️
+
+**Lynx 真机环境必须配置！**
+
+```bash
+# 方法 1：自动配置（推荐）
+./setup-env.sh
+
+# 方法 2：手动配置
+# 1. 获取你的 IP：ifconfig | grep "inet " | grep -v 127.0.0.1
+# 2. 编辑 .env.local，替换为你的 IP
+```
+
+详见：[环境变量配置说明](./docs/getting-started/环境变量配置说明.md) 或 [快速开始](./docs/getting-started/快速开始.md)
+
+### 3. 启动服务
+
+**终端 1 - 启动 Mock API：**
 ```bash
 node mock/server.cjs
 ```
-Mock API 服务将在 `http://localhost:4000` 启动。
+Mock API 服务将在 `http://localhost:4000` 启动（局域网访问使用真实 IP）。
 
-### 启动开发服务
+**终端 2 - 启动开发服务：**
 ```bash
 pnpm run dev
 ```
+开发服务将在 `http://localhost:3000` 启动。
 
-开发服务已配置代理，所有 `/api` 请求会自动代理到 `http://localhost:4000`（见 `lynx.config.ts` 配置）。
+### 4. 访问应用
 
-## 项目简介
+- **浏览器**: `http://你的IP:3000`
+- **Lynx Explorer**: `http://你的IP:3000/main.lynx.bundle`
 
-本项目是抖音搜索 / Lynx 工程师训练营的练习项目，基于 **Lynx + TypeScript** 实现了一组卡片类组件，包括餐厅信息卡片、优惠卡片以及横向滚动列表等，用于熟悉 Lynx 组件体系、样式能力以及组件拆分思路。
+## 📚 完整文档
 
-当前项目主要完成了：
+详细文档请查看 [docs 目录](./docs/)：
 
-- 基础页面搭建
-- 餐厅头部信息卡片（`RestaurantHeader`）
-- 单个优惠卡片组件（`DealCard`）
-- 横向滚动优惠列表组件（`DealList`）
-- 基于 TypeScript 的数据结构定义（`RestaurantInfo`、`DealItem` 等）
+### 🚀 入门指南
+- **[快速开始](./docs/getting-started/快速开始.md)** ⭐ 推荐首读
+- [配置完成总结](./docs/getting-started/配置完成总结.md)
+- [环境变量配置说明](./docs/getting-started/环境变量配置说明.md)
 
-后续会在此基础上继续完善,根据笔记里面的规划,逐步填充项目
+### 📖 开发指南
+- [API 使用说明](./docs/guides/API使用说明.md)
+- [性能监控说明](./docs/guides/性能监控说明.md)
+- [Performance API 详细说明](./docs/guides/Performance-API-说明.md)
+
+### 🔧 问题排查
+- [Lynx 真机调试说明](./docs/troubleshooting/Lynx真机调试说明.md)
+- [Lynx 网络请求问题总结](./docs/troubleshooting/Lynx网络请求问题总结.md)
+- [Lynx Performance API FAQ](./docs/troubleshooting/Lynx-Performance-API-FAQ.md) ⭐ 重要
+
+## 📖 项目简介
+
+本项目是抖音搜索 / Lynx 工程师训练营的练习项目，基于 **Lynx + TypeScript + React** 实现了一个完整的餐厅团购页面。
+
+### 已实现功能
+
+✅ **页面组件**
+- 餐厅信息头部卡片（`RestaurantHeader`）
+- 团购商品卡片（`DealCard`）
+- 横向滚动团购列表（`DealList`）
+
+✅ **网络请求**
+- HTTP 请求封装（`utils/http.ts`）
+- 环境自动检测（Lynx / 浏览器）
+- 完整的 TypeScript 类型支持
+- API 服务层（`services/shop.ts`）
+
+✅ **静态资源处理**
+- 图片 URL 自动转换（`utils/url.ts`）
+- Lynx 环境适配
+- 降级图片支持
+
+✅ **性能监控**
+- Lynx Performance API 集成
+- `__lynx_timing_flag` 标记
+- `usePerformanceMetrics` Hook
+- Actual FMP 指标监控
+
+✅ **开发体验**
+- 环境变量配置
+- 自动配置脚本
+- Mock API 服务
+- 完整的文档体系
+
+### 技术栈
+
+- **框架**: Lynx + React
+- **语言**: TypeScript
+- **构建**: Vite
+- **API**: Express.js (Mock Server)
+- **样式**: CSS
 
 ## Mock API 接口说明
 
@@ -111,7 +181,122 @@ Mock 数据存储在 `mock/data/` 目录下：
 ### 代理配置
 
 开发环境的代理配置在 `lynx.config.ts` 中：
-- 所有 `/api` 开头的请求会自动代理到 `http://localhost:4000`
-- 确保在启动开发服务前先启动 Mock API 服务
+- **浏览器环境**: `/api` 请求会自动代理到 `http://localhost:4000`
+- **Lynx 环境**: 使用完整 URL（配置在 `.env.local`）
+
+⚠️ **注意**：Lynx 真机环境不能使用代理，必须配置完整 URL！
+
+## 🏗️ 项目结构
+
+```
+.
+├── src/
+│   ├── pages/
+│   │   └── restaurant/           # 餐厅页面
+│   │       ├── index.tsx         # 主页面
+│   │       └── components/       # 页面组件
+│   │           ├── RestaurantHeader.tsx  # 餐厅头部
+│   │           ├── DealCard.tsx          # 团购卡片
+│   │           └──  DealList.tsx         # 团购列表（含性能监控）
+│   ├── utils/
+│   │   ├── http.ts               # HTTP 请求封装
+│   │   └── url.ts                # URL 处理工具
+│   ├── services/
+│   │   └── shop.ts               # 商家和团购 API
+│   ├── hooks/
+│   │   └── usePerformanceMetrics.ts  # 性能监控 Hook
+│   ├── types/
+│   │   ├── common.ts             # 通用类型
+│   │   └── restaurant.ts         # 餐厅/团购类型
+│   └── assets/                   # 静态资源
+├── mock/
+│   ├── server.cjs                # Mock API 服务器
+│   └── data/
+│       ├── shop.json             # 商家数据
+│       └── products.json         # 团购商品数据
+├── docs/                         # 📚 完整文档
+│   ├── getting-started/          # 🚀 入门指南
+│   ├── guides/                   # 📖 开发指南
+│   └── troubleshooting/          # 🔧 问题排查
+├── .env.local                    # 环境配置（需要手动配置）
+├── env-template.txt              # 环境变量模板
+└── setup-env.sh                  # 自动配置脚本
+```
+
+## ⚠️ 重要提示
+
+### Lynx 真机环境特殊限制
+
+1. **`window.location` 不可用**
+   - 无法自动获取域名和端口
+   - 必须通过 `.env.local` 配置完整 URL
+
+2. **不能使用 `localhost`**
+   - Lynx 中 `localhost` 指向设备本身
+   - 必须使用真实 IP 地址
+
+3. **Performance API 仅生产可用**
+   - 开发环境 `performance` 是 `undefined`（正常现象）
+   - 性能数据只在真实 Lynx 容器（如抖音 App）中收集
+
+详见：[Lynx 网络请求问题总结](./docs/troubleshooting/Lynx网络请求问题总结.md)
+
+## 🔧 常见问题
+
+### Q: API 请求失败，报 HTTP 499 错误？
+
+**A**: 请检查 `.env.local` 配置：
+1. IP 地址是否正确（不能是 `localhost`）
+2. 端口是否正确（后端 4000，前端 3000）
+3. 是否重启了开发服务器
+
+详见：[Lynx 真机调试说明](./docs/troubleshooting/Lynx真机调试说明.md)
+
+### Q: 图片不显示？
+
+**A**: 检查 `VITE_FRONTEND_URL` 配置是否正确，前端服务器是否运行。
+
+### Q: Performance API 是 undefined？
+
+**A**: 这是正常的！开发环境不支持 Performance API，只在生产环境（抖音 App）中可用。
+
+详见：[Lynx Performance API FAQ](./docs/troubleshooting/Lynx-Performance-API-FAQ.md)
+
+### Q: 修改了 `.env.local` 不生效？
+
+**A**: 需要重启开发服务器（Ctrl+C 然后 `npm run dev`）。
+
+## 🎯 开发检查清单
+
+在开始开发前，请确认：
+
+- [ ] 已安装依赖（`pnpm install`）
+- [ ] 已配置 `.env.local`（运行 `./setup-env.sh` 或手动配置）
+- [ ] IP 地址是真实 IP，不是 `localhost`
+- [ ] 后端服务正在运行（端口 4000）
+- [ ] 前端服务正在运行（端口 3000）
+- [ ] 浏览器测试通过
+- [ ] Lynx Explorer 测试通过（可选）
+
+## 📦 构建和部署
+
+```bash
+# 构建生产版本
+pnpm build
+
+# 检查构建产物
+ls -lh dist/main.lynx.bundle
+
+# 部署到 CDN（根据实际情况）
+# 在 Lynx 容器中访问：http://your-cdn.com/main.lynx.bundle
+```
+
+## 🔗 相关资源
+
+- [Lynx 官方文档](https://lynxjs.org/zh/)
+- [Lynx Performance API](https://lynxjs.org/zh/api/lynx-api/performance-api/)
+- [项目完整文档](./docs/)
 
 ---
+
+**Happy Coding!** 🎉

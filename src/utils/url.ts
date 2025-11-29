@@ -1,22 +1,23 @@
 /**
  * URL 处理工具
  * 用于处理 Lynx 环境中的资源路径问题
+ * 
+ * Lynx 真机环境说明：
+ * - window、window.location 都不可用
+ * - 必须使用完整的 http://IP:PORT 格式
  */
 
 /**
- * 获取前端服务器地址
+ * 获取前端服务器地址（用于静态资源）
  */
 function getFrontendURL(): string {
-  // 从当前访问地址自动获取
-  if (typeof window !== 'undefined' && window.location) {
-    const { protocol, hostname, port } = window.location
-    // 如果有端口，使用端口；否则使用默认端口
-    const actualPort = port || (import.meta.env.VITE_DEV_PORT || '3001')
-    return `${protocol}//${hostname}:${actualPort}`
-  }
+  // 在 Lynx 真机中，window 不可用，直接使用配置
+  // 优先使用环境变量，否则使用默认值
+  const frontendURL = import.meta.env.VITE_FRONTEND_URL || 'http://192.168.0.100:3000'
   
-  // 降级方案：使用环境变量
-  return import.meta.env.VITE_DEV_URL || 'http://192.168.0.100:3001'
+  console.log('[URL] 前端服务器地址:', frontendURL)
+  
+  return frontendURL
 }
 
 /**

@@ -130,46 +130,34 @@ console.log(result.data)
 
 ## 🔍 工作原理
 
-### 环境检测与自动配置
+### 环境检测与配置
 
 `http.ts` 中的关键代码：
 
 ```typescript
-// 自动获取当前访问的域名
-function getHostURL(): string {
-  if (typeof window !== 'undefined' && window.location) {
-    const { protocol, hostname } = window.location
-    return `${protocol}//${hostname}`  // 自动获取，如: http://192.168.0.100
-  }
-  return import.meta.env.VITE_DEV_HOST || 'http://192.168.0.100'
-}
-
 function getBaseURL(): string {
-  if (import.meta.env.DEV) {
-    const isLynx = typeof __MAIN_THREAD__ !== 'undefined'
-    
-    if (isLynx) {
-      // ✅ Lynx: 自动获取域名 + 后端端口
-      const host = getHostURL()
-      const backendPort = import.meta.env.VITE_API_PORT || '4000'
-      return `${host}:${backendPort}`  // 如: http://192.168.0.100:4000
-    } else {
-      // ✅ 浏览器: 相对路径 + 代理
-      return ''
-    }
-  }
+  // 检测是否在 Lynx 环境中
+  const isLynx = typeof __MAIN_THREAD__ !== 'undefined'
   
-  return import.meta.env.VITE_API_BASE_URL || ''
+  if (isLynx) {
+    // ✅ Lynx 环境：使用环境变量配置的完整 URL
+    // 注意：Lynx 真机中 window.location 不可用，必须使用配置
+    const apiHost = import.meta.env.VITE_API_HOST || 'http://192.168.0.100:4000'
+    return apiHost
+  } else {
+    // ✅ 浏览器环境：使用相对路径，通过代理访问
+    return ''
+  }
 }
 ```
 
 **关键点**：
-- ✅ **自动获取域名**：从 `window.location` 自动获取当前访问的地址
-- ✅ **无需硬编码**：IP 变化不需要修改代码
-- ✅ **智能降级**：自动获取失败时使用环境变量
-- 使用 `typeof __MAIN_THREAD__` 判断是否在 Lynx 环境
-- Lynx 中必须使用真实 IP，不能用 localhost
-- 浏览器中使用相对路径，通过代理转发
+- ⚠️ **Lynx 真机限制**：`window.location` 不可用，必须使用环境变量
+- ✅ **环境变量配置**：通过 `.env.local` 配置完整 URL
+- ✅ **环境自动检测**：使用 `typeof __MAIN_THREAD__` 判断 Lynx 环境
+- ✅ **默认值兜底**：配置缺失时使用默认 IP
+- 🔒 **必须真实 IP**：Lynx 中不能用 `localhost`
+- 🌐 **浏览器代理**：浏览器使用相对路径，通过代理转发
 
 ### 请求流程
 
@@ -247,35 +235,47 @@ const shops = await getShops()
 
 ### 开发环境
 
-✅ **自动配置，无需手动修改！**
+⚠️ **必须配置环境变量**
 
-- **Lynx 环境**: 自动获取当前域名 + 后端端口（如 `http://192.168.0.100:4000`）
-- **浏览器环境**: 相对路径 + 代理
+由于 Lynx 真机环境中 `window.location` 不可用，必须通过 `.env.local` 配置：
 
-**优势**：
-- 自动适配不同的开发环境
-- IP 变化不需要修改代码
-- 不同开发者无需各自配置
+**快速配置**：
 
-**可选配置**（如果自动获取失败）：
-
-创建 `.env.local` 文件：
 ```bash
-VITE_DEV_HOST=http://192.168.0.100
-VITE_API_PORT=4000
+# 方法 1：自动配置（推荐）
+./setup-env.sh
+
+# 方法 2：手动创建
+cp env-template.txt .env.local
+# 然后编辑 .env.local，替换为你的 IP
 ```
 
-详见：`环境变量配置说明.md`
+**配置内容**：
+
+```bash
+# 后端 API 地址（完整 URL）
+VITE_API_HOST=http://192.168.0.100:4000
+
+# 前端服务器地址（完整 URL，用于静态资源）
+VITE_FRONTEND_URL=http://192.168.0.100:3000
+```
+
+**注意事项**：
+- ✅ 必须使用真实 IP，不能用 `localhost`
+- ✅ 必须包含完整 URL（协议 + IP + 端口）
+- ✅ 修改后需要重启开发服务器
+- ✅ IP 变化时重新运行 `./setup-env.sh`
+
+详见：`环境变量配置说明.md` 和 `快速开始.md`
 
 ### 生产环境
 
-如果需要配置生产环境的 API 地址，创建 `.env.production`:
+生产环境同样需要配置环境变量（根据实际部署环境）：
 
 ```bash
-VITE_API_BASE_URL=https://api.example.com
+VITE_API_HOST=https://api.example.com
+VITE_FRONTEND_URL=https://cdn.example.com
 ```
-
-然后代码中的 `/api/shops` 会自动变成 `https://api.example.com/api/shops`
 
 ## 🎯 总结
 
