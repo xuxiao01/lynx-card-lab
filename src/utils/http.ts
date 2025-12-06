@@ -15,7 +15,7 @@ function getBaseURL(): string {
   if (isLynx) {
     // Lynx 环境：使用完整 URL（真机和开发环境都需要）
     // 优先使用环境变量，否则使用默认 IP
-    const apiHost = import.meta.env.VITE_API_HOST || 'http://192.168.0.100:4000'
+    const apiHost = import.meta.env.VITE_API_HOST || 'http://192.168.0.102:4000'
     
     console.log('[HTTP] Lynx 环境检测:')
     console.log('  - API Host:', apiHost)

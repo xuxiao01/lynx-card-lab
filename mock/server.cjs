@@ -68,5 +68,6 @@ app.post('/api/deals', (req, res) => {
 
 app.listen(4000, '0.0.0.0', () => {
   console.log('Mock API 运行在 http://localhost:4000')
-  console.log('局域网访问: http://192.168.0.100:4000')
+  console.log('💡 提示: 请在 .env.local 中配置 VITE_API_HOST 为你的本机 IP:4000')
+  console.log('   例如: VITE_API_HOST=http://192.168.0.102:4000')
 })

@@ -13,7 +13,7 @@
 function getFrontendURL(): string {
   // 在 Lynx 真机中，window 不可用，直接使用配置
   // 优先使用环境变量，否则使用默认值
-  const frontendURL = import.meta.env.VITE_FRONTEND_URL || 'http://192.168.0.100:3000'
+  const frontendURL = import.meta.env.VITE_FRONTEND_URL || 'http://192.168.0.102:3000'
   
   console.log('[URL] 前端服务器地址:', frontendURL)
   

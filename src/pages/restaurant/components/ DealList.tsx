@@ -1,6 +1,6 @@
 import { DealCard } from './DealCard'
 import type { DealItem } from '../../../types/restaurant'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef, useLayoutEffect } from 'react'
 import { getDeals } from '../../../services/shop'
 import { processImageUrl } from '../../../utils/url'
 import { usePerformanceMetrics } from '../../../hooks/usePerformanceMetrics'
@@ -12,6 +12,10 @@ export function DealList() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
+  // 自定义 FMP 性能监控：记录开始请求团购数据的时间
+  const renderStartTimeRef = useRef<number | null>(null)
+  const hasReportedFmpRef = useRef(false)
+
   // 启用性能监控
   usePerformanceMetrics()
 
@@ -20,6 +24,13 @@ export function DealList() {
       try {
         console.log('开始获取团购数据...')
         setLoading(true)
+        
+        // 记录开始时间（数据开始加载时）
+        const startTime = typeof performance !== 'undefined' && performance.now 
+          ? performance.now() 
+          : Date.now()
+        renderStartTimeRef.current = startTime
+        console.log('📊 [自定义 FMP] 开始时间:', startTime, 'ms')
         
         // 获取餐厅 ID 为 '1' 的团购商品
         const dealsData = await getDeals('1')
@@ -31,6 +42,7 @@ export function DealList() {
             ...deal,
             dealImage: processImageUrl(deal.dealImage, foodDefaultImage),
           }))
+          
           setDeals(processedDeals)
         } else {
           setError('没有找到团购数据')
@@ -74,6 +86,28 @@ export function DealList() {
       </view>
     )
   }
+
+  // 检测首屏关键内容渲染完成（FMP）
+  useLayoutEffect(() => {
+    if (deals.length > 0 && renderStartTimeRef.current && !hasReportedFmpRef.current) {
+      // 使用 requestAnimationFrame 确保 DOM 更新完成
+      requestAnimationFrame(() => {
+        const currentTime = typeof performance !== 'undefined' && performance.now 
+          ? performance.now() 
+          : Date.now()
+        
+        const fmpDuration = currentTime - renderStartTimeRef.current!
+        hasReportedFmpRef.current = true
+        
+        console.log('='.repeat(60))
+        console.log('📊 [自定义 FMP] 首屏关键内容渲染完成')
+        console.log('='.repeat(60))
+        console.log('⏱️  FMP 耗时:', fmpDuration.toFixed(2), 'ms')
+        console.log('📦 卡片数量:', deals.length)
+        console.log('='.repeat(60))
+      })
+    }
+  }, [deals])
 
   // 正常渲染
   return (
