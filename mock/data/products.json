@@ -1,62 +1,62 @@
 [
   {
     "dealId": "1",
-    "dealImage": "/static/image/food-default.b740debc.png",
+    "dealImage": "/static/image/food-02.b740debc.png",
     "badges": [
       {
         "text": "特惠补贴",
-        "subText": "减10",
+        "subText": "减14",
         "type": "normal"
       }
     ],
-    "dealTitle": "【神仙下午茶】椒麻鸡+椒麻鱼+配菜+超大杯柠檬茶",
-    "price": 168,
-    "originalPrice": 298,
+    "dealTitle": "【网红夜宵】椒麻鸡+热菜+果汁",
+    "price": 150,
+    "originalPrice": 219,
     "buttonText": "抢购"
   },
   {
     "dealId": "2",
-    "dealImage": "/static/image/food-default.b740debc.png",
+    "dealImage": "/static/image/food-03.b740debc.png",
     "badges": [
       {
-        "text": "特惠补贴",
-        "subText": "减15",
-        "type": "normal"
+        "text": "限时秒杀",
+        "subText": "06:39:50",
+        "type": "countdown"
       }
     ],
-    "dealTitle": "【招牌套餐】椒麻鸡+椒麻鱼+配菜+超大杯柠檬茶",
-    "price": 158,
-    "originalPrice": 288,
+    "dealTitle": "【爆款晚餐】椒麻鱼+糖醋里脊+红烧肉+热菜+两杯柠檬茶",
+    "price": 273,
+    "originalPrice": 295,
     "buttonText": "抢购"
   },
   {
     "dealId": "3",
-    "dealImage": "/static/image/food-default.b740debc.png",
+    "dealImage": "/static/image/food-01.b740debc.png",
     "badges": [
       {
-        "text": "限时秒杀",
-        "subText": "12:88:88",
-        "type": "countdown"
+        "text": "特惠补贴",
+        "subText": "减25",
+        "type": "normal"
       }
     ],
-    "dealTitle": "【超值双人餐】椒麻鸡+配菜+两杯柠檬茶",
-    "price": 128,
-    "originalPrice": 228,
+    "dealTitle": "【热销四人餐】糖醋里脊+椒麻鸡+配菜+四杯柠檬茶",
+    "price": 257,
+    "originalPrice": 286,
     "buttonText": "抢购"
   },
   {
     "dealId": "4",
-    "dealImage": "/static/image/food-default.b740debc.png",
+    "dealImage": "/static/image/food-02.b740debc.png",
     "badges": [
       {
         "text": "特惠补贴",
-        "subText": "减20",
+        "subText": "减7",
         "type": "normal"
       }
     ],
-    "dealTitle": "【经典套餐】椒麻鱼+配菜+超大杯柠檬茶",
-    "price": 148,
-    "originalPrice": 268,
+    "dealTitle": "【招牌四人餐】回锅肉+鱼香肉丝+水煮鱼+小食+三杯柠檬茶",
+    "price": 141,
+    "originalPrice": 195,
     "buttonText": "抢购"
   },
   {
@@ -64,29 +64,29 @@
     "dealImage": "/static/image/food-default.b740debc.png",
     "badges": [
       {
-        "text": "特惠补贴",
-        "subText": "减10",
-        "type": "normal"
+        "text": "限时秒杀",
+        "subText": "13:25:27",
+        "type": "countdown"
       }
     ],
-    "dealTitle": "【精选套餐】椒麻鸡+椒麻鱼+配菜+超大杯柠檬茶",
-    "price": 178,
-    "originalPrice": 308,
+    "dealTitle": "【爆款早餐】糖醋里脊+配菜+奶茶",
+    "price": 42,
+    "originalPrice": 82,
     "buttonText": "抢购"
   },
   {
     "dealId": "6",
-    "dealImage": "/static/image/food-default.b740debc.png",
+    "dealImage": "/static/image/food-03.b740debc.png",
     "badges": [
       {
-        "text": "限时秒杀",
-        "subText": "12:88:88",
-        "type": "countdown"
+        "text": "特惠补贴",
+        "subText": "减24",
+        "type": "normal"
       }
     ],
-    "dealTitle": "【超值单人餐】椒麻鸡+配菜+柠檬茶",
-    "price": 88,
-    "originalPrice": 158,
+    "dealTitle": "【新品晚餐】糖醋里脊+椒麻鱼+小食+四杯柠檬茶",
+    "price": 39,
+    "originalPrice": 94,
     "buttonText": "抢购"
   },
   {
@@ -95,13 +95,13 @@
     "badges": [
       {
         "text": "特惠补贴",
-        "subText": "减25",
+        "subText": "减15",
         "type": "normal"
       }
     ],
-    "dealTitle": "【豪华套餐】椒麻鸡+椒麻鱼+配菜+超大杯柠檬茶+小食",
-    "price": 198,
-    "originalPrice": 358,
+    "dealTitle": "【经典四人餐】宫保鸡丁+椒麻鸡+汤品+两杯柠檬茶",
+    "price": 120,
+    "originalPrice": 142,
     "buttonText": "抢购"
   },
   {
@@ -109,14 +109,14 @@
     "dealImage": "/static/image/food-default.b740debc.png",
     "badges": [
       {
-        "text": "特惠补贴",
-        "subText": "减12",
-        "type": "normal"
+        "text": "限时秒杀",
+        "subText": "09:44:13",
+        "type": "countdown"
       }
     ],
-    "dealTitle": "【经典双人餐】椒麻鱼+配菜+两杯柠檬茶",
-    "price": 138,
-    "originalPrice": 248,
+    "dealTitle": "【特惠单人餐】糖醋里脊+口水鸡+椒麻鱼+小食+奶茶",
+    "price": 30,
+    "originalPrice": 82,
     "buttonText": "抢购"
   },
   {
@@ -124,18 +124,378 @@
     "dealImage": "/static/image/food-default.b740debc.png",
     "badges": [
       {
-        "text": "限时秒杀",
-        "subText": "12:88:88",
-        "type": "countdown"
+        "text": "特惠补贴",
+        "subText": "减17",
+        "type": "normal"
       }
     ],
-    "dealTitle": "【超值三人餐】椒麻鸡+椒麻鱼+配菜+三杯柠檬茶",
-    "price": 218,
-    "originalPrice": 388,
+    "dealTitle": "【必点四人餐】水煮鱼+口水鸡+糖醋里脊+小食+两杯柠檬茶",
+    "price": 181,
+    "originalPrice": 236,
     "buttonText": "抢购"
   },
   {
     "dealId": "10",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "04:15:32",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【网红夜宵】椒麻鸡+椒麻鱼+配菜+果汁",
+    "price": 178,
+    "originalPrice": 256,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "11",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减10",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【经典早餐】鱼香肉丝+汤品+可乐",
+    "price": 101,
+    "originalPrice": 180,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "12",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "13:17:30",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【热销午餐】口水鸡+配菜+果汁",
+    "price": 215,
+    "originalPrice": 293,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "13",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减18",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【人气套餐】鱼香肉丝+热菜+可乐",
+    "price": 84,
+    "originalPrice": 148,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "14",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减5",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【热销套餐】回锅肉+椒麻鸡+小食+超大杯柠檬茶",
+    "price": 108,
+    "originalPrice": 179,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "15",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减16",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【网红双人餐】椒麻鸡+凉菜+两杯柠檬茶",
+    "price": 156,
+    "originalPrice": 186,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "16",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "09:19:53",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【超值套餐】鱼香肉丝+汤品+果汁",
+    "price": 82,
+    "originalPrice": 147,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "17",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减27",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【推荐夜宵】鱼香肉丝+回锅肉+配菜+三杯柠檬茶",
+    "price": 48,
+    "originalPrice": 90,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "18",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "09:18:45",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【热销双人餐】鱼香肉丝+回锅肉+椒麻鸡+热菜+超大杯柠檬茶",
+    "price": 30,
+    "originalPrice": 78,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "19",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减28",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【爆款三人餐】回锅肉+糖醋里脊+口水鸡+热菜+柠檬茶",
+    "price": 159,
+    "originalPrice": 188,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "20",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减5",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【豪华夜宵】椒麻鸡+椒麻鱼+鱼香肉丝+配菜+可乐",
+    "price": 61,
+    "originalPrice": 109,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "21",
+    "dealImage": "/static/image/food-02.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减26",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【爆款四人餐】回锅肉+小食+柠檬茶",
+    "price": 99,
+    "originalPrice": 139,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "22",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "20:31:28",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【必点双人餐】椒麻鱼+凉菜+可乐",
+    "price": 71,
+    "originalPrice": 88,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "23",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减30",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【限时下午茶】红烧肉+糖醋里脊+鱼香肉丝+配菜+四杯柠檬茶",
+    "price": 169,
+    "originalPrice": 245,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "24",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减10",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【精选午餐】麻婆豆腐+口水鸡+配菜+两杯柠檬茶",
+    "price": 127,
+    "originalPrice": 137,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "25",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减21",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【网红双人餐】水煮鱼+宫保鸡丁+口水鸡+配菜+四杯柠檬茶",
+    "price": 208,
+    "originalPrice": 245,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "26",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减25",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【人气夜宵】鱼香肉丝+小食+三杯柠檬茶",
+    "price": 195,
+    "originalPrice": 251,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "27",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减8",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【网红套餐】口水鸡+糖醋里脊+配菜+超大杯柠檬茶",
+    "price": 30,
+    "originalPrice": 96,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "28",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减6",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【精选晚餐】麻婆豆腐+糖醋里脊+凉菜+四杯柠檬茶",
+    "price": 89,
+    "originalPrice": 148,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "29",
+    "dealImage": "/static/image/food-02.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "15:13:46",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【网红四人餐】鱼香肉丝+宫保鸡丁+配菜+两杯柠檬茶",
+    "price": 43,
+    "originalPrice": 118,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "30",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "19:07:31",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【神仙晚餐】宫保鸡丁+汤品+果汁",
+    "price": 40,
+    "originalPrice": 89,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "31",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "03:15:46",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【推荐四人餐】鱼香肉丝+椒麻鱼+小食+超大杯柠檬茶",
+    "price": 146,
+    "originalPrice": 226,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "32",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "17:29:00",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【网红三人餐】麻婆豆腐+凉菜+果汁",
+    "price": 70,
+    "originalPrice": 97,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "33",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减25",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【热销下午茶】回锅肉+红烧肉+水煮鱼+热菜+柠檬茶",
+    "price": 256,
+    "originalPrice": 290,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "34",
     "dealImage": "/static/image/food-default.b740debc.png",
     "badges": [
       {
@@ -144,10 +504,999 @@
         "type": "normal"
       }
     ],
-    "dealTitle": "【精选双人餐】椒麻鸡+配菜+两杯柠檬茶+小食",
-    "price": 148,
+    "dealTitle": "【爆款套餐】椒麻鱼+回锅肉+热菜+两杯柠檬茶",
+    "price": 138,
+    "originalPrice": 205,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "35",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "04:01:05",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【限时四人餐】椒麻鱼+糖醋里脊+汤品+柠檬茶",
+    "price": 153,
+    "originalPrice": 206,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "36",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减11",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【人气四人餐】麻婆豆腐+回锅肉+配菜+奶茶",
+    "price": 30,
+    "originalPrice": 94,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "37",
+    "dealImage": "/static/image/food-02.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减17",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【人气双人餐】麻婆豆腐+热菜+奶茶",
+    "price": 162,
+    "originalPrice": 188,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "38",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "01:54:09",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【超值套餐】口水鸡+凉菜+超大杯柠檬茶",
+    "price": 31,
+    "originalPrice": 82,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "39",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "01:40:46",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【招牌套餐】红烧肉+麻婆豆腐+配菜+果汁",
+    "price": 166,
+    "originalPrice": 243,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "40",
+    "dealImage": "/static/image/food-02.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减7",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【神仙四人餐】椒麻鱼+汤品+四杯柠檬茶",
+    "price": 30,
+    "originalPrice": 52,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "41",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减25",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【限时下午茶】回锅肉+红烧肉+汤品+柠檬茶",
+    "price": 252,
+    "originalPrice": 297,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "42",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减9",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【新品早餐】糖醋里脊+水煮鱼+凉菜+果汁",
+    "price": 267,
+    "originalPrice": 285,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "43",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减17",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【网红套餐】椒麻鱼+汤品+可乐",
+    "price": 233,
+    "originalPrice": 296,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "44",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减28",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【限时四人餐】回锅肉+椒麻鱼+鱼香肉丝+汤品+柠檬茶",
+    "price": 193,
+    "originalPrice": 265,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "45",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减19",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【超值四人餐】椒麻鱼+宫保鸡丁+汤品+超大杯柠檬茶",
+    "price": 30,
+    "originalPrice": 79,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "46",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减18",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【限时套餐】回锅肉+麻婆豆腐+鱼香肉丝+热菜+可乐",
+    "price": 161,
+    "originalPrice": 205,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "47",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减26",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【限时午餐】宫保鸡丁+红烧肉+椒麻鱼+汤品+两杯柠檬茶",
+    "price": 30,
+    "originalPrice": 74,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "48",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减18",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【限时三人餐】鱼香肉丝+配菜+两杯柠檬茶",
+    "price": 251,
     "originalPrice": 268,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "49",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减12",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【限时午餐】宫保鸡丁+椒麻鱼+椒麻鸡+配菜+果汁",
+    "price": 220,
+    "originalPrice": 267,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "50",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减27",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【招牌三人餐】椒麻鱼+麻婆豆腐+配菜+三杯柠檬茶",
+    "price": 201,
+    "originalPrice": 262,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "51",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "09:46:54",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【必点午餐】麻婆豆腐+宫保鸡丁+口水鸡+配菜+两杯柠檬茶",
+    "price": 219,
+    "originalPrice": 277,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "52",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "23:41:32",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【推荐四人餐】红烧肉+热菜+柠檬茶",
+    "price": 160,
+    "originalPrice": 177,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "53",
+    "dealImage": "/static/image/food-02.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减29",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【特惠四人餐】红烧肉+宫保鸡丁+热菜+柠檬茶",
+    "price": 67,
+    "originalPrice": 138,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "54",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减10",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【豪华晚餐】宫保鸡丁+回锅肉+水煮鱼+热菜+奶茶",
+    "price": 157,
+    "originalPrice": 203,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "55",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减22",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【网红套餐】麻婆豆腐+椒麻鱼+汤品+超大杯柠檬茶",
+    "price": 184,
+    "originalPrice": 244,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "56",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减28",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【特惠晚餐】鱼香肉丝+红烧肉+配菜+果汁",
+    "price": 59,
+    "originalPrice": 80,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "57",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减13",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【精选夜宵】口水鸡+凉菜+奶茶",
+    "price": 81,
+    "originalPrice": 123,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "58",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减20",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【豪华双人餐】椒麻鸡+麻婆豆腐+凉菜+奶茶",
+    "price": 63,
+    "originalPrice": 111,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "59",
+    "dealImage": "/static/image/food-02.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "06:07:02",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【人气三人餐】口水鸡+汤品+可乐",
+    "price": 163,
+    "originalPrice": 229,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "60",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "09:27:22",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【必点套餐】水煮鱼+糖醋里脊+回锅肉+小食+奶茶",
+    "price": 189,
+    "originalPrice": 257,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "61",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减20",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【新品套餐】水煮鱼+口水鸡+小食+四杯柠檬茶",
+    "price": 216,
+    "originalPrice": 252,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "62",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减15",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【超值三人餐】回锅肉+宫保鸡丁+热菜+柠檬茶",
+    "price": 160,
+    "originalPrice": 184,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "63",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减16",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【爆款四人餐】红烧肉+椒麻鸡+口水鸡+小食+奶茶",
+    "price": 175,
+    "originalPrice": 225,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "64",
+    "dealImage": "/static/image/food-02.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减16",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【新品套餐】鱼香肉丝+配菜+可乐",
+    "price": 145,
+    "originalPrice": 163,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "65",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减14",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【经典夜宵】水煮鱼+回锅肉+宫保鸡丁+小食+果汁",
+    "price": 178,
+    "originalPrice": 198,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "66",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减6",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【经典四人餐】椒麻鸡+小食+两杯柠檬茶",
+    "price": 133,
+    "originalPrice": 159,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "67",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "16:39:51",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【限时午餐】宫保鸡丁+鱼香肉丝+凉菜+三杯柠檬茶",
+    "price": 102,
+    "originalPrice": 117,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "68",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减17",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【热销夜宵】宫保鸡丁+椒麻鸡+麻婆豆腐+汤品+三杯柠檬茶",
+    "price": 141,
+    "originalPrice": 161,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "69",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减19",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【豪华四人餐】糖醋里脊+配菜+两杯柠檬茶",
+    "price": 271,
+    "originalPrice": 291,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "70",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减11",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【精选晚餐】麻婆豆腐+口水鸡+鱼香肉丝+配菜+三杯柠檬茶",
+    "price": 230,
+    "originalPrice": 243,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "71",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减19",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【经典套餐】椒麻鸡+回锅肉+配菜+两杯柠檬茶",
+    "price": 242,
+    "originalPrice": 269,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "72",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减10",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【新品四人餐】水煮鱼+椒麻鱼+小食+三杯柠檬茶",
+    "price": 229,
+    "originalPrice": 264,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "73",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "21:28:03",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【特惠三人餐】椒麻鱼+回锅肉+配菜+果汁",
+    "price": 151,
+    "originalPrice": 230,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "74",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "02:14:59",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【网红夜宵】麻婆豆腐+鱼香肉丝+热菜+柠檬茶",
+    "price": 191,
+    "originalPrice": 232,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "75",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减5",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【神仙套餐】口水鸡+鱼香肉丝+凉菜+果汁",
+    "price": 194,
+    "originalPrice": 245,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "76",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减25",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【豪华晚餐】鱼香肉丝+凉菜+超大杯柠檬茶",
+    "price": 149,
+    "originalPrice": 199,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "77",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "10:56:06",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【经典早餐】回锅肉+小食+三杯柠檬茶",
+    "price": 167,
+    "originalPrice": 199,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "78",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "15:23:49",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【经典单人餐】红烧肉+糖醋里脊+配菜+三杯柠檬茶",
+    "price": 221,
+    "originalPrice": 290,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "79",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "11:50:58",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【推荐套餐】红烧肉+椒麻鱼+汤品+果汁",
+    "price": 118,
+    "originalPrice": 143,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "80",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减15",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【推荐早餐】回锅肉+麻婆豆腐+热菜+超大杯柠檬茶",
+    "price": 30,
+    "originalPrice": 75,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "81",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "13:18:25",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【限时夜宵】鱼香肉丝+小食+奶茶",
+    "price": 33,
+    "originalPrice": 95,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "82",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减23",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【超值夜宵】麻婆豆腐+椒麻鸡+凉菜+柠檬茶",
+    "price": 58,
+    "originalPrice": 138,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "83",
+    "dealImage": "/static/image/food-02.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "02:13:06",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【特惠单人餐】糖醋里脊+椒麻鸡+汤品+三杯柠檬茶",
+    "price": 119,
+    "originalPrice": 157,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "84",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减6",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【爆款午餐】宫保鸡丁+椒麻鱼+凉菜+可乐",
+    "price": 30,
+    "originalPrice": 54,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "85",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减7",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【必点四人餐】椒麻鱼+小食+奶茶",
+    "price": 215,
+    "originalPrice": 276,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "86",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "22:10:08",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【招牌套餐】宫保鸡丁+凉菜+果汁",
+    "price": 67,
+    "originalPrice": 145,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "87",
+    "dealImage": "/static/image/food-02.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "17:01:25",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【精选午餐】麻婆豆腐+口水鸡+鱼香肉丝+汤品+四杯柠檬茶",
+    "price": 257,
+    "originalPrice": 278,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "88",
+    "dealImage": "/static/image/food-02.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减21",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【豪华夜宵】麻婆豆腐+糖醋里脊+小食+两杯柠檬茶",
+    "price": 70,
+    "originalPrice": 139,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "89",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减21",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【人气下午茶】麻婆豆腐+热菜+四杯柠檬茶",
+    "price": 66,
+    "originalPrice": 85,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "90",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减11",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【必点单人餐】回锅肉+红烧肉+小食+奶茶",
+    "price": 111,
+    "originalPrice": 169,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "91",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减16",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【网红早餐】麻婆豆腐+热菜+两杯柠檬茶",
+    "price": 166,
+    "originalPrice": 211,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "92",
+    "dealImage": "/static/image/food-02.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减7",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【特惠四人餐】糖醋里脊+热菜+四杯柠檬茶",
+    "price": 111,
+    "originalPrice": 154,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "93",
+    "dealImage": "/static/image/food-03.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减23",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【热销双人餐】椒麻鸡+凉菜+四杯柠檬茶",
+    "price": 198,
+    "originalPrice": 260,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "94",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减27",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【豪华夜宵】宫保鸡丁+糖醋里脊+椒麻鱼+小食+果汁",
+    "price": 131,
+    "originalPrice": 176,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "95",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减7",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【必点晚餐】糖醋里脊+麻婆豆腐+热菜+果汁",
+    "price": 176,
+    "originalPrice": 223,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "96",
+    "dealImage": "/static/image/food-02.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "02:12:08",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【精选下午茶】红烧肉+水煮鱼+回锅肉+热菜+三杯柠檬茶",
+    "price": 247,
+    "originalPrice": 299,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "97",
+    "dealImage": "/static/image/food-02.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减23",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【必点早餐】红烧肉+糖醋里脊+配菜+四杯柠檬茶",
+    "price": 67,
+    "originalPrice": 125,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "98",
+    "dealImage": "/static/image/food-default.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减29",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【爆款下午茶】口水鸡+热菜+果汁",
+    "price": 143,
+    "originalPrice": 207,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "99",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "限时秒杀",
+        "subText": "22:42:05",
+        "type": "countdown"
+      }
+    ],
+    "dealTitle": "【爆款四人餐】糖醋里脊+红烧肉+回锅肉+热菜+四杯柠檬茶",
+    "price": 161,
+    "originalPrice": 174,
+    "buttonText": "抢购"
+  },
+  {
+    "dealId": "100",
+    "dealImage": "/static/image/food-01.b740debc.png",
+    "badges": [
+      {
+        "text": "特惠补贴",
+        "subText": "减8",
+        "type": "normal"
+      }
+    ],
+    "dealTitle": "【招牌晚餐】口水鸡+小食+奶茶",
+    "price": 56,
+    "originalPrice": 109,
     "buttonText": "抢购"
   }
 ]
-

@@ -11,6 +11,10 @@ export function DealList() {
   const [deals, setDeals] = useState<DealItem[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  
+  // 懒加载：控制可见卡片数量
+  // 初始只渲染首屏可见的卡片，延后渲染不可见部分
+  const [visibleCount, setVisibleCount] = useState(4) // 首屏显示4个卡片
 
   // 自定义 FMP 性能监控：记录开始请求团购数据的时间
   const renderStartTimeRef = useRef<number | null>(null)
@@ -43,6 +47,8 @@ export function DealList() {
             dealImage: processImageUrl(deal.dealImage, foodDefaultImage),
           }))
           
+          // 重置可见数量为初始值（首屏显示4个卡片）
+          setVisibleCount(4)
           setDeals(processedDeals)
         } else {
           setError('没有找到团购数据')
@@ -87,9 +93,42 @@ export function DealList() {
     )
   }
 
+  // 懒加载：延后渲染不可见部分的卡片
+  useEffect(() => {
+    if (deals.length === 0 || visibleCount >= deals.length) return
+    
+    // 延迟加载剩余卡片，给首屏渲染留出时间
+    // 使用分批次加载，避免一次性渲染太多导致卡顿
+    const loadMoreCards = () => {
+      if (visibleCount >= deals.length) return
+      
+      // 每次加载4个卡片
+      const nextCount = Math.min(visibleCount + 4, deals.length)
+      setVisibleCount(nextCount)
+      
+      // 如果还有未加载的卡片，继续延迟加载
+      if (nextCount < deals.length) {
+        // 使用 requestAnimationFrame 确保在下一帧加载，不阻塞渲染
+        requestAnimationFrame(() => {
+          setTimeout(loadMoreCards, 50) // 每 50ms 加载一批
+        })
+      }
+    }
+    
+    // 首屏渲染完成后，延迟 200ms 开始加载剩余卡片
+    const timer = setTimeout(() => {
+      loadMoreCards()
+    }, 200)
+    
+    return () => clearTimeout(timer)
+  }, [deals.length, visibleCount])
+
   // 检测首屏关键内容渲染完成（FMP）
   useLayoutEffect(() => {
-    if (deals.length > 0 && renderStartTimeRef.current && !hasReportedFmpRef.current) {
+    // 只统计首屏可见的卡片数量（用于 FMP 计算）
+    const firstScreenCount = Math.min(visibleCount, deals.length)
+    
+    if (firstScreenCount > 0 && renderStartTimeRef.current && !hasReportedFmpRef.current) {
       // 使用 requestAnimationFrame 确保 DOM 更新完成
       requestAnimationFrame(() => {
         const currentTime = typeof performance !== 'undefined' && performance.now 
@@ -103,13 +142,16 @@ export function DealList() {
         console.log('📊 [自定义 FMP] 首屏关键内容渲染完成')
         console.log('='.repeat(60))
         console.log('⏱️  FMP 耗时:', fmpDuration.toFixed(2), 'ms')
-        console.log('📦 卡片数量:', deals.length)
+        console.log('📦 首屏卡片数量:', firstScreenCount, '(总数量:', deals.length, ')')
+        console.log('🚀 性能优化: 已启用懒加载，延后渲染不可见部分')
         console.log('='.repeat(60))
       })
     }
-  }, [deals])
+  }, [deals, visibleCount])
 
-  // 正常渲染
+  // 正常渲染：只渲染可见的卡片
+  const visibleDeals = deals.slice(0, visibleCount)
+
   return (
     <list
       className='deal-list-container'
@@ -120,7 +162,7 @@ export function DealList() {
       // 当此元件渲染完成时，触发 Actual FMP 性能指标上报
       __lynx_timing_flag="__lynx_timing_actual_fmp"
     >
-      {deals.map((deal) => (
+      {visibleDeals.map((deal) => (
         <list-item
           key={deal.dealId}
           item-key={`deal-${deal.dealId}`}
