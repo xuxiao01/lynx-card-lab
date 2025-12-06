@@ -15,6 +15,7 @@ export function DealList() {
   // 懒加载：控制可见卡片数量
   // 初始只渲染首屏可见的卡片，延后渲染不可见部分
   const [visibleCount, setVisibleCount] = useState(4) // 首屏显示4个卡片
+  const [loadingMore, setLoadingMore] = useState(false) // 加载更多状态
 
   // 自定义 FMP 性能监控：记录开始请求团购数据的时间
   const renderStartTimeRef = useRef<number | null>(null)
@@ -93,35 +94,39 @@ export function DealList() {
     )
   }
 
-  // 懒加载：延后渲染不可见部分的卡片
-  useEffect(() => {
-    if (deals.length === 0 || visibleCount >= deals.length) return
+  // 滚动到底部加载更多：使用 list 组件的原生能力
+  const handleScrollToLower = () => {
+    // 如果正在加载或已经没有更多数据，直接返回
+    if (loadingMore || visibleCount >= deals.length) {
+      return
+    }
     
-    // 延迟加载剩余卡片，给首屏渲染留出时间
-    // 使用分批次加载，避免一次性渲染太多导致卡顿
-    const loadMoreCards = () => {
-      if (visibleCount >= deals.length) return
-      
+    console.log('📜 [滚动加载] 触发滚动到底部，开始加载更多卡片...')
+    setLoadingMore(true)
+    
+    // 模拟异步加载，避免阻塞渲染
+    // 在实际场景中，这里可能是请求更多数据
+    requestAnimationFrame(() => {
       // 每次加载4个卡片
       const nextCount = Math.min(visibleCount + 4, deals.length)
       setVisibleCount(nextCount)
+      setLoadingMore(false)
       
-      // 如果还有未加载的卡片，继续延迟加载
+      console.log(`✅ [滚动加载] 已加载 ${nextCount}/${deals.length} 个卡片`)
+      
+      // 如果还有未加载的卡片，可以继续预加载
       if (nextCount < deals.length) {
-        // 使用 requestAnimationFrame 确保在下一帧加载，不阻塞渲染
-        requestAnimationFrame(() => {
-          setTimeout(loadMoreCards, 50) // 每 50ms 加载一批
-        })
+        // 延迟一小段时间后，如果用户没有继续滚动，可以预加载下一批
+        setTimeout(() => {
+          if (nextCount < deals.length && !loadingMore) {
+            const preloadCount = Math.min(nextCount + 2, deals.length)
+            setVisibleCount(preloadCount)
+            console.log(`🚀 [预加载] 预加载了 ${preloadCount - nextCount} 个卡片`)
+          }
+        }, 300)
       }
-    }
-    
-    // 首屏渲染完成后，延迟 200ms 开始加载剩余卡片
-    const timer = setTimeout(() => {
-      loadMoreCards()
-    }, 200)
-    
-    return () => clearTimeout(timer)
-  }, [deals.length, visibleCount])
+    })
+  }
 
   // 检测首屏关键内容渲染完成（FMP）
   useLayoutEffect(() => {
@@ -158,6 +163,9 @@ export function DealList() {
       scroll-orientation='horizontal'
       list-type='single'
       span-count={1}
+      // 设置距离底部（右侧）还剩2个item时触发 scrolltolower 事件
+      lower-threshold-item-count={2}
+      bindscrolltolower={handleScrollToLower}
       // Lynx 性能监控标记：标记团购列表为首屏关键内容
       // 当此元件渲染完成时，触发 Actual FMP 性能指标上报
       __lynx_timing_flag="__lynx_timing_actual_fmp"
@@ -171,6 +179,12 @@ export function DealList() {
           <DealCard deal={deal} />
         </list-item>
       ))}
+      {/* 加载提示 */}
+      {loadingMore && visibleCount < deals.length && (
+        <list-item key='loading-more' item-key='loading-more' className='deal-list-item'>
+          <text style={{ fontSize: '12px', color: '#999' }}>加载中...</text>
+        </list-item>
+      )}
     </list>
   )
 }
