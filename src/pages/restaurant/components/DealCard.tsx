@@ -8,17 +8,18 @@ import { useCountdown } from '../../../hooks/useCountdown'
 import './DealCard.css'
 
 // 图片映射表：根据图片文件名（不包含 hash）映射到实际导入的图片
-const getImageByPath = (imagePath: string): string => {
+const IMAGE_MAP: Record<string, string> = {
+  'food-default': foodDefaultImage,
+  'food-01': food01Image,
+  'food-02': food02Image,
+  'food-03': food03Image,
+}
+
+const getImageByPath = (imagePath?: string): string => {
   if (!imagePath) return foodDefaultImage
-  
-  // 匹配图片文件名（支持带或不带 hash）
-  if (imagePath.includes('food-default')) return foodDefaultImage
-  if (imagePath.includes('food-01')) return food01Image
-  if (imagePath.includes('food-02')) return food02Image
-  if (imagePath.includes('food-03')) return food03Image
-  
-  // 如果都不匹配，返回原路径或默认图片
-  return imagePath || foodDefaultImage
+
+  const key = Object.keys(IMAGE_MAP).find((k) => imagePath.includes(k))
+  return key ? IMAGE_MAP[key] : imagePath
 }
 
 interface DealCardProps {
@@ -26,12 +27,11 @@ interface DealCardProps {
 }
 
 export function DealCard({ deal }: DealCardProps) {
-  // 获取第一个 badge，如果没有则显示空
-  const badge = deal.badges && deal.badges.length > 0 ? deal.badges[0] : null
+  const badge = deal.badges?.[0] ?? null
+  const isCountdown = badge?.type === 'countdown'
 
-  // 如果是倒计时类型，使用倒计时 hook
   const countdownTime = useCountdown(
-    badge?.type === 'countdown' && badge?.subText ? badge.subText : '00:00:00'
+    isCountdown && badge?.subText ? badge.subText : '00:00:00'
   )
 
   // 根据图片路径获取对应的导入图片
@@ -47,8 +47,10 @@ export function DealCard({ deal }: DealCardProps) {
               <text className='badge-text'>{badge.text}</text>
             </view>
             {badge.subText && (
-              <text className={`badge-sub-text ${badge.type === 'countdown' ? 'badge-sub-text-countdown' : ''}`}>
-                {badge.type === 'countdown' ? countdownTime : badge.subText}
+              <text
+                className={`badge-sub-text ${isCountdown ? 'badge-sub-text-countdown' : ''}`}
+              >
+                {isCountdown ? countdownTime : badge.subText}
               </text>
             )}
           </view>
@@ -58,7 +60,7 @@ export function DealCard({ deal }: DealCardProps) {
       <view className='title-wrapper'>
         <text className='deal-title'>{deal.dealTitle}</text>
       </view>
-      
+
       <view className='bottom-row'>
         <view className='price-wrapper'>
           <text className='price-current'>¥{deal.price}</text>

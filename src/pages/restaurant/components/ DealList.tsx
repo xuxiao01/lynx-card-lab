@@ -7,6 +7,17 @@ import { usePerformanceMetrics } from '../../../hooks/usePerformanceMetrics'
 import foodDefaultImage from '../../../assets/food-default.png'
 import './DealList.css'
 
+const INITIAL_VISIBLE_COUNT = 4           // 首屏展示数量
+const LOAD_MORE_STEP = 4                 // 每次滚动加载数量
+const PRELOAD_STEP = 2                   // 预加载数量
+const PRELOAD_DELAY_MS = 300             // 预加载延迟时间
+
+// 工具函数：统一获取当前时间（浏览器 / 非浏览器）
+const now = () =>
+  typeof performance !== 'undefined' && typeof performance.now === 'function'
+    ? performance.now()
+    : Date.now()
+
 export function DealList() {
   const [deals, setDeals] = useState<DealItem[]>([])
   const [loading, setLoading] = useState(true)
@@ -14,7 +25,7 @@ export function DealList() {
   
   // 懒加载：控制可见卡片数量
   // 初始只渲染首屏可见的卡片，延后渲染不可见部分
-  const [visibleCount, setVisibleCount] = useState(4) // 首屏显示4个卡片
+  const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_COUNT)
   const [loadingMore, setLoadingMore] = useState(false) // 加载更多状态
 
   // 自定义 FMP 性能监控：记录开始请求团购数据的时间
@@ -31,15 +42,11 @@ export function DealList() {
         setLoading(true)
         
         // 记录开始时间（数据开始加载时）
-        const startTime = typeof performance !== 'undefined' && performance.now 
-          ? performance.now() 
-          : Date.now()
-        renderStartTimeRef.current = startTime
-        console.log('📊 [自定义 FMP] 开始时间:', startTime, 'ms')
+        renderStartTimeRef.current = now()
+        console.log('📊 [自定义 FMP] 开始时间:', renderStartTimeRef.current, 'ms')
         
         // 获取餐厅 ID 为 '1' 的团购商品
         const dealsData = await getDeals('1')
-        console.log('✅ 获取团购数据成功！', dealsData)
         
         if (dealsData && dealsData.length > 0) {
           // 处理图片路径
@@ -48,15 +55,13 @@ export function DealList() {
             dealImage: processImageUrl(deal.dealImage, foodDefaultImage),
           }))
           
-          // 重置可见数量为初始值（首屏显示4个卡片）
-          setVisibleCount(4)
+          setVisibleCount(INITIAL_VISIBLE_COUNT)
           setDeals(processedDeals)
         } else {
           setError('没有找到团购数据')
         }
       } catch (err) {
         console.error('❌ 获取团购数据失败:', err)
-        setError(err instanceof Error ? err.message : '获取数据失败')
       } finally {
         setLoading(false)
       }
@@ -96,63 +101,55 @@ export function DealList() {
 
   // 滚动到底部加载更多：使用 list 组件的原生能力
   const handleScrollToLower = () => {
-    // 如果正在加载或已经没有更多数据，直接返回
-    if (loadingMore || visibleCount >= deals.length) {
-      return
-    }
-    
-    console.log('📜 [滚动加载] 触发滚动到底部，开始加载更多卡片...')
+    if (loadingMore || visibleCount >= deals.length) return
+  
     setLoadingMore(true)
-    
-    // 模拟异步加载，避免阻塞渲染
-    // 在实际场景中，这里可能是请求更多数据
+  
     requestAnimationFrame(() => {
-      // 每次加载4个卡片
-      const nextCount = Math.min(visibleCount + 4, deals.length)
-      setVisibleCount(nextCount)
+      setVisibleCount((prev) => {
+        const nextCount = Math.min(prev + LOAD_MORE_STEP, deals.length)
+  
+        // 预加载下一批
+        if (nextCount < deals.length) {
+          setTimeout(() => {
+            setVisibleCount((current) =>
+              Math.min(current + PRELOAD_STEP, deals.length)
+            )
+            console.log(
+              `🚀 [预加载] 预加载了 ${Math.min(
+                PRELOAD_STEP,
+                deals.length - nextCount
+              )} 个卡片`
+            )
+          }, PRELOAD_DELAY_MS)
+        }
+  
+        return nextCount
+      })
+  
       setLoadingMore(false)
-      
-      console.log(`✅ [滚动加载] 已加载 ${nextCount}/${deals.length} 个卡片`)
-      
-      // 如果还有未加载的卡片，可以继续预加载
-      if (nextCount < deals.length) {
-        // 延迟一小段时间后，如果用户没有继续滚动，可以预加载下一批
-        setTimeout(() => {
-          if (nextCount < deals.length && !loadingMore) {
-            const preloadCount = Math.min(nextCount + 2, deals.length)
-            setVisibleCount(preloadCount)
-            console.log(`🚀 [预加载] 预加载了 ${preloadCount - nextCount} 个卡片`)
-          }
-        }, 300)
-      }
     })
   }
 
   // 检测首屏关键内容渲染完成（FMP）
   useLayoutEffect(() => {
-    // 只统计首屏可见的卡片数量（用于 FMP 计算）
+    if (hasReportedFmpRef.current || !renderStartTimeRef.current) return
+  
     const firstScreenCount = Math.min(visibleCount, deals.length)
-    
-    if (firstScreenCount > 0 && renderStartTimeRef.current && !hasReportedFmpRef.current) {
-      // 使用 requestAnimationFrame 确保 DOM 更新完成
-      requestAnimationFrame(() => {
-        const currentTime = typeof performance !== 'undefined' && performance.now 
-          ? performance.now() 
-          : Date.now()
-        
-        const fmpDuration = currentTime - renderStartTimeRef.current!
-        hasReportedFmpRef.current = true
-        
-        console.log('='.repeat(60))
-        console.log('📊 [自定义 FMP] 首屏关键内容渲染完成')
-        console.log('='.repeat(60))
-        console.log('⏱️  FMP 耗时:', fmpDuration.toFixed(2), 'ms')
-        console.log('📦 首屏卡片数量:', firstScreenCount, '(总数量:', deals.length, ')')
-        console.log('🚀 性能优化: 已启用懒加载，延后渲染不可见部分')
-        console.log('='.repeat(60))
-      })
-    }
-  }, [deals, visibleCount])
+    if (!firstScreenCount) return
+  
+    requestAnimationFrame(() => {
+      const duration = now() - (renderStartTimeRef.current as number)
+      hasReportedFmpRef.current = true
+  
+      console.log('='.repeat(60))
+      console.log('📊 [自定义 FMP] 首屏关键内容渲染完成')
+      console.log('⏱️  FMP 耗时:', duration.toFixed(2), 'ms')
+      console.log('📦 首屏卡片数量:', firstScreenCount, '(总数量:', deals.length, ')')
+      console.log('🚀 性能优化: 已启用懒加载，延后渲染不可见部分')
+      console.log('='.repeat(60))
+    })
+  }, [visibleCount, deals.length])
 
   // 正常渲染：只渲染可见的卡片
   const visibleDeals = deals.slice(0, visibleCount)

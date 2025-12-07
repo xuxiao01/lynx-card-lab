@@ -13,37 +13,30 @@ interface RestaurantHeaderProps {
 export function RestaurantHeader({ restaurant }: RestaurantHeaderProps) {
   // 固定显示 5 个心，根据评分显示满心、半心、空心
   const renderRatingHearts = () => {
-    const hearts = []
     const rating = restaurant.rating
-
-    for (let i = 0; i < 5; i++) {
+  
+    return Array.from({ length: 5 }, (_, i) => {
       const heartValue = rating - i
-      let heartSrc
-      let heartKey
-
-      let heartClassName = 'heart-icon'
-      if (heartValue >= 1) {
-        heartSrc = fullHeartIcon
-        heartKey = `full-${i}`
-      } else if (heartValue >= 0.5) {
-        heartSrc = halfHeartIcon
-        heartKey = `half-${i}`
-        heartClassName = 'heart-icon heart-icon-half'
-      } else {
-        heartSrc = outlineHeartIcon
-        heartKey = `outline-${i}`
-      }
-
-      hearts.push(
+  
+      const isFull = heartValue >= 1
+      const isHalf = !isFull && heartValue >= 0.5
+  
+      const src = isFull
+        ? fullHeartIcon
+        : isHalf
+          ? halfHeartIcon
+          : outlineHeartIcon
+  
+      const className = isHalf ? 'heart-icon heart-icon-half' : 'heart-icon'
+  
+      return (
         <image
-          key={heartKey}
-          className={heartClassName}
-          src={heartSrc}
-        />,
+          key={i}
+          className={className}
+          src={src}
+        />
       )
-    }
-
-    return hearts
+    })
   }
 
   // 渲染标签文本，如果包含"心动榜"，给这三个字加上背景
@@ -107,18 +100,20 @@ export function RestaurantHeader({ restaurant }: RestaurantHeaderProps) {
         </view>
 
         <view className='tags-row'>
-          {restaurant.tags.map((tag, index) => {
-            const hasXindong = tag.includes('心动榜')
-            return (
-              <view
-                key={index}
-                className={hasXindong ? 'tag tag-with-xindong' : 'tag'}
-              >
-                {renderTagText(tag)}
-              </view>
-            )
-          })}
-        </view>
+  {(restaurant.tags ?? []).map((tag, index) => {
+    const hasXindong = tag.includes('心动榜')
+    const key = `${tag}-${index}` // 比纯 index 稳一点
+
+    return (
+      <view
+        key={key}
+        className={hasXindong ? 'tag tag-with-xindong' : 'tag'}
+      >
+        {renderTagText(tag)}
+      </view>
+    )
+  })}
+</view>
       </view>
     </view>
   )
