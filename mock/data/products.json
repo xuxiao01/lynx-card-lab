@@ -21,7 +21,8 @@
       {
         "text": "限时秒杀",
         "subText": "06:39:50",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735727990000
       }
     ],
     "dealTitle": "【爆款晚餐】椒麻鱼+糖醋里脊+红烧肉+热菜+两杯柠檬茶",
@@ -66,7 +67,8 @@
       {
         "text": "限时秒杀",
         "subText": "13:25:27",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735752327000
       }
     ],
     "dealTitle": "【爆款早餐】糖醋里脊+配菜+奶茶",
@@ -111,7 +113,8 @@
       {
         "text": "限时秒杀",
         "subText": "09:44:13",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735739053000
       }
     ],
     "dealTitle": "【特惠单人餐】糖醋里脊+口水鸡+椒麻鱼+小食+奶茶",
@@ -141,7 +144,8 @@
       {
         "text": "限时秒杀",
         "subText": "04:15:32",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735719332000
       }
     ],
     "dealTitle": "【网红夜宵】椒麻鸡+椒麻鱼+配菜+果汁",
@@ -171,7 +175,8 @@
       {
         "text": "限时秒杀",
         "subText": "13:17:30",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735751850000
       }
     ],
     "dealTitle": "【热销午餐】口水鸡+配菜+果汁",
@@ -231,7 +236,8 @@
       {
         "text": "限时秒杀",
         "subText": "09:19:53",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735737593000
       }
     ],
     "dealTitle": "【超值套餐】鱼香肉丝+汤品+果汁",
@@ -261,7 +267,8 @@
       {
         "text": "限时秒杀",
         "subText": "09:18:45",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735737525000
       }
     ],
     "dealTitle": "【热销双人餐】鱼香肉丝+回锅肉+椒麻鸡+热菜+超大杯柠檬茶",
@@ -321,7 +328,8 @@
       {
         "text": "限时秒杀",
         "subText": "20:31:28",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735777888000
       }
     ],
     "dealTitle": "【必点双人餐】椒麻鱼+凉菜+可乐",
@@ -426,7 +434,8 @@
       {
         "text": "限时秒杀",
         "subText": "15:13:46",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735758826000
       }
     ],
     "dealTitle": "【网红四人餐】鱼香肉丝+宫保鸡丁+配菜+两杯柠檬茶",
@@ -441,7 +450,8 @@
       {
         "text": "限时秒杀",
         "subText": "19:07:31",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735772851000
       }
     ],
     "dealTitle": "【神仙晚餐】宫保鸡丁+汤品+果汁",
@@ -456,7 +466,8 @@
       {
         "text": "限时秒杀",
         "subText": "03:15:46",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735715746000
       }
     ],
     "dealTitle": "【推荐四人餐】鱼香肉丝+椒麻鱼+小食+超大杯柠檬茶",
@@ -471,7 +482,8 @@
       {
         "text": "限时秒杀",
         "subText": "17:29:00",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735766940000
       }
     ],
     "dealTitle": "【网红三人餐】麻婆豆腐+凉菜+果汁",
@@ -516,7 +528,8 @@
       {
         "text": "限时秒杀",
         "subText": "04:01:05",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735718465000
       }
     ],
     "dealTitle": "【限时四人餐】椒麻鱼+糖醋里脊+汤品+柠檬茶",
@@ -561,7 +574,8 @@
       {
         "text": "限时秒杀",
         "subText": "01:54:09",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735710849000
       }
     ],
     "dealTitle": "【超值套餐】口水鸡+凉菜+超大杯柠檬茶",
@@ -576,7 +590,8 @@
       {
         "text": "限时秒杀",
         "subText": "01:40:46",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735710046000
       }
     ],
     "dealTitle": "【招牌套餐】红烧肉+麻婆豆腐+配菜+果汁",
@@ -756,7 +771,8 @@
       {
         "text": "限时秒杀",
         "subText": "09:46:54",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735739214000
       }
     ],
     "dealTitle": "【必点午餐】麻婆豆腐+宫保鸡丁+口水鸡+配菜+两杯柠檬茶",
@@ -771,7 +787,8 @@
       {
         "text": "限时秒杀",
         "subText": "23:41:32",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735789292000
       }
     ],
     "dealTitle": "【推荐四人餐】红烧肉+热菜+柠檬茶",
@@ -876,7 +893,8 @@
       {
         "text": "限时秒杀",
         "subText": "06:07:02",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735726022000
       }
     ],
     "dealTitle": "【人气三人餐】口水鸡+汤品+可乐",
@@ -891,7 +909,8 @@
       {
         "text": "限时秒杀",
         "subText": "09:27:22",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735738042000
       }
     ],
     "dealTitle": "【必点套餐】水煮鱼+糖醋里脊+回锅肉+小食+奶茶",
@@ -996,7 +1015,8 @@
       {
         "text": "限时秒杀",
         "subText": "16:39:51",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735763991000
       }
     ],
     "dealTitle": "【限时午餐】宫保鸡丁+鱼香肉丝+凉菜+三杯柠檬茶",
@@ -1086,7 +1106,8 @@
       {
         "text": "限时秒杀",
         "subText": "21:28:03",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735781283000
       }
     ],
     "dealTitle": "【特惠三人餐】椒麻鱼+回锅肉+配菜+果汁",
@@ -1101,7 +1122,8 @@
       {
         "text": "限时秒杀",
         "subText": "02:14:59",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735712099000
       }
     ],
     "dealTitle": "【网红夜宵】麻婆豆腐+鱼香肉丝+热菜+柠檬茶",
@@ -1146,7 +1168,8 @@
       {
         "text": "限时秒杀",
         "subText": "10:56:06",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735743366000
       }
     ],
     "dealTitle": "【经典早餐】回锅肉+小食+三杯柠檬茶",
@@ -1161,7 +1184,8 @@
       {
         "text": "限时秒杀",
         "subText": "15:23:49",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735759429000
       }
     ],
     "dealTitle": "【经典单人餐】红烧肉+糖醋里脊+配菜+三杯柠檬茶",
@@ -1176,7 +1200,8 @@
       {
         "text": "限时秒杀",
         "subText": "11:50:58",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735746658000
       }
     ],
     "dealTitle": "【推荐套餐】红烧肉+椒麻鱼+汤品+果汁",
@@ -1206,7 +1231,8 @@
       {
         "text": "限时秒杀",
         "subText": "13:18:25",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735751905000
       }
     ],
     "dealTitle": "【限时夜宵】鱼香肉丝+小食+奶茶",
@@ -1236,7 +1262,8 @@
       {
         "text": "限时秒杀",
         "subText": "02:13:06",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735711986000
       }
     ],
     "dealTitle": "【特惠单人餐】糖醋里脊+椒麻鸡+汤品+三杯柠檬茶",
@@ -1281,7 +1308,8 @@
       {
         "text": "限时秒杀",
         "subText": "22:10:08",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735783808000
       }
     ],
     "dealTitle": "【招牌套餐】宫保鸡丁+凉菜+果汁",
@@ -1296,7 +1324,8 @@
       {
         "text": "限时秒杀",
         "subText": "17:01:25",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735765285000
       }
     ],
     "dealTitle": "【精选午餐】麻婆豆腐+口水鸡+鱼香肉丝+汤品+四杯柠檬茶",
@@ -1431,7 +1460,8 @@
       {
         "text": "限时秒杀",
         "subText": "02:12:08",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735711928000
       }
     ],
     "dealTitle": "【精选下午茶】红烧肉+水煮鱼+回锅肉+热菜+三杯柠檬茶",
@@ -1476,7 +1506,8 @@
       {
         "text": "限时秒杀",
         "subText": "22:42:05",
-        "type": "countdown"
+        "type": "countdown",
+        "endTime": 1735785725000
       }
     ],
     "dealTitle": "【爆款四人餐】糖醋里脊+红烧肉+回锅肉+热菜+四杯柠檬茶",

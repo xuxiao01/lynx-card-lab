@@ -4,45 +4,83 @@
 
 ## 🚀 快速开始
 
-### 1. 安装依赖
+### 📋 完整启动流程（按顺序执行）
+
+#### 步骤 1：安装依赖
 
 ```bash
 pnpm install
 ```
 
-### 2. 配置环境变量（首次必做）⚠️
-
-**Lynx 真机环境必须配置！**
-
+#### 步骤 2：配置环境变量（首次必做）⚠️
+**自动配置**
 ```bash
-# 方法 1：自动配置（推荐）
+# 首次运行需要添加执行权限（只需执行一次）
+chmod +x setup-env.sh
+
+# 运行脚本，自动获取 IP 并生成 .env.local 文件
 ./setup-env.sh
-
-# 方法 2：手动配置
-# 1. 获取你的 IP：ifconfig | grep "inet " | grep -v 127.0.0.1
-# 2. 编辑 .env.local，替换为你的 IP
 ```
+脚本会自动检测你的 IP 并生成 `.env.local` 配置文件。
 
-详见：[环境变量配置说明](./docs/getting-started/环境变量配置说明.md) 或 [快速开始](./docs/getting-started/快速开始.md)
+#### 步骤 3：启动后端服务（终端 1）
 
-### 3. 启动服务
+在对应的 mock 文件夹中打开一个终端窗口：
 
-**终端 1 - 启动 Mock API：**
 ```bash
 node mock/server.cjs
 ```
-Mock API 服务将在 `http://localhost:4000` 启动（局域网访问使用真实 IP）。
 
-**终端 2 - 启动开发服务：**
+看到以下输出表示启动成功：
+```
+Mock API 运行在 http://localhost:4000
+```
+
+**保持这个终端窗口运行，不要关闭！**
+
+#### 步骤 4：启动前端服务（终端 2）
+
+打开第二个终端窗口：
+
 ```bash
 pnpm run dev
 ```
-开发服务将在 `http://localhost:3000` 启动。
 
-### 4. 访问应用
+看到以下输出表示启动成功：
+```
+➜  Local:   http://localhost:3000/
+➜  Network: http://192.168.0.100:3000/  ← 记住这个 IP
+```
 
-- **浏览器**: `http://你的IP:3000`
-- **Lynx Explorer**: `http://你的IP:3000/main.lynx.bundle`
+**保持这个终端窗口运行，不要关闭！**
+
+#### 步骤 5：访问应用
+
+现在两个服务都在运行了，可以访问应用：
+
+- **浏览器测试**：打开 `http://你的IP:3000`（使用步骤 4 中显示的 Network IP）
+- **Lynx Explorer 测试**：输入 `http://你的IP:3000/main.lynx.bundle?fullscreen=true`
+
+---
+
+### 📝 启动流程总结
+
+```
+1. pnpm install                    # 安装依赖（只需一次）
+2. ./setup-env.sh                  # 配置环境变量（首次必做）
+3. node mock/server.cjs            # 启动后端（终端 1，保持运行）
+4. pnpm run dev                    # 启动前端（终端 2，保持运行）
+5. 浏览器访问 http://你的IP:3000   # 访问应用
+```
+
+### ⚠️ 注意事项
+
+- **两个服务都要运行**：后端（端口 4000）和前端（端口 3000）必须同时运行
+- **不要关闭终端**：关闭终端窗口会停止对应的服务
+- **IP 地址**：Lynx 真机环境必须使用真实 IP，不能使用 `localhost`
+- **修改配置后**：如果修改了 `.env.local`，需要重启前端服务（Ctrl+C 然后重新运行 `pnpm run dev`）
+
+详见：[环境变量配置说明](./docs/getting-started/环境变量配置说明.md) 或 [快速开始](./docs/getting-started/快速开始.md)
 
 ## 📚 完整文档
 
@@ -72,6 +110,8 @@ pnpm run dev
 ✅ **页面组件**
 - 餐厅信息头部卡片（`RestaurantHeader`）
 - 团购商品卡片（`DealCard`）
+  - 支持多种角标类型（普通角标、倒计时角标）
+  - 倒计时实时更新功能
 - 横向滚动团购列表（`DealList`）
 
 ✅ **网络请求**
@@ -85,16 +125,44 @@ pnpm run dev
 - Lynx 环境适配
 - 降级图片支持
 
+✅ **交互功能**
+- 倒计时功能（`useCountdown` Hook）
+  - 支持 "HH:MM:SS" 格式时间倒计时
+  - 自动每秒更新，时间归零后停止
+  - 优化样式避免倒计时更新时背景移动
+
 ✅ **性能监控**
-- Lynx Performance API 集成
-- `__lynx_timing_flag` 标记
-- `usePerformanceMetrics` Hook
-- Actual FMP 指标监控
+- Lynx Performance API 集成（`usePerformanceMetrics` Hook）
+  - 使用 `PerformanceObserver` 监听 Lynx 的 `actualFmp` 指标
+  - 手动解析和打印性能数据（actualFmp、totalActualFmp）
+  - 性能数据格式化输出和总结分析
+- 自定义 FMP 时间检测（`DealList.tsx` 中实现）
+  - 记录数据开始加载时间点
+  - 使用 `useLayoutEffect` 检测首屏关键内容渲染完成
+  - 计算从数据加载到首屏渲染完成的耗时
+  - 输出自定义 FMP 性能数据（耗时、首屏卡片数量等）
+- `__lynx_timing_flag` 标记集成
+- 双重性能监控：Lynx 官方 API + 自定义实现
+
+✅ **工程化能力（Rspeedy + Rspack）**
+- 自定义静态资源命名规则
+  - 图片文件命名：`[name].xuxiao.[contenthash:8][ext]`
+  - 通过 `output.filename` 配置实现
+- Rspack 插件集成
+  - 使用 `tools.rspack` 集成 `BannerPlugin`
+  - 为构建产物自动添加作者/功能注释
+  - 加深对 Rspack 插件与打包产物结构的理解
+
+✅ **Mock API 服务**
+- 基于 Node.js + Express 实现
+  - `GET /api/shops`：获取所有商家信息
+  - `POST /api/deals`：根据商家 ID 获取团购商品
+- 完整的错误处理和 CORS 支持
+- JSON 数据文件管理（`mock/data/`）
 
 ✅ **开发体验**
 - 环境变量配置
-- 自动配置脚本
-- Mock API 服务
+- 自动配置脚本（`setup-env.sh`）
 - 完整的文档体系
 
 ### 技术栈
@@ -161,6 +229,14 @@ pnpm run dev
           "type": "normal"
         }
       ],
+      // 或者倒计时类型：
+      // "badges": [
+      //   {
+      //     "text": "限时秒杀",
+      //     "subText": "06:39:50",
+      //     "type": "countdown"
+      //   }
+      // ],
       "dealTitle": "【神仙下午茶】椒麻鸡+椒麻鱼+配菜+超大杯柠檬茶",
       "price": 168,
       "originalPrice": 298,
@@ -204,6 +280,7 @@ Mock 数据存储在 `mock/data/` 目录下：
 │   ├── services/
 │   │   └── shop.ts               # 商家和团购 API
 │   ├── hooks/
+│   │   ├── useCountdown.ts           # 倒计时 Hook
 │   │   └── usePerformanceMetrics.ts  # 性能监控 Hook
 │   ├── types/
 │   │   ├── common.ts             # 通用类型
