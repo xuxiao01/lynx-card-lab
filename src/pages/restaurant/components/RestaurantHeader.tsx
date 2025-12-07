@@ -2,6 +2,8 @@ import type { RestaurantInfo } from '../../../types/restaurant'
 import fullHeartIcon from '../../../assets/heart-full.png'
 import halfHeartIcon from '../../../assets/heart-half.png'
 import outlineHeartIcon from '../../../assets/heart-outline.png'
+import badgeBg from '../../../assets/badge-bg.png'
+import xindongTagBg from '../../../assets/xindong-tag-bg.png'
 import './RestaurantHeader.css'
 
 interface RestaurantHeaderProps {
@@ -19,12 +21,14 @@ export function RestaurantHeader({ restaurant }: RestaurantHeaderProps) {
       let heartSrc
       let heartKey
 
+      let heartClassName = 'heart-icon'
       if (heartValue >= 1) {
         heartSrc = fullHeartIcon
         heartKey = `full-${i}`
       } else if (heartValue >= 0.5) {
         heartSrc = halfHeartIcon
         heartKey = `half-${i}`
+        heartClassName = 'heart-icon heart-icon-half'
       } else {
         heartSrc = outlineHeartIcon
         heartKey = `outline-${i}`
@@ -33,13 +37,39 @@ export function RestaurantHeader({ restaurant }: RestaurantHeaderProps) {
       hearts.push(
         <image
           key={heartKey}
-          className='heart-icon'
+          className={heartClassName}
           src={heartSrc}
         />,
       )
     }
 
     return hearts
+  }
+
+  // 渲染标签文本，如果包含"心动榜"，给这三个字加上背景
+  const renderTagText = (tag: string) => {
+    const keyword = '心动榜'
+    const index = tag.indexOf(keyword)
+
+    if (index === -1) {
+      // 不包含"心动榜"，直接返回原文本
+      return <text className='tag-text'>{tag}</text>
+    }
+
+    // 包含"心动榜"，拆分成三部分：前部分、心动榜、后部分
+    const before = tag.substring(0, index)
+    const after = tag.substring(index + keyword.length)
+
+    return (
+      <>
+        {before && <text className='tag-text'>{before}</text>}
+        <view className='tag-xindong-wrapper'>
+          <image className='tag-xindong-bg' src={xindongTagBg} />
+          <text className='tag-xindong-text'>{keyword}</text>
+        </view>
+        {after && <text className='tag-text tag-text-after'>{after}</text>}
+      </>
+    )
   }
 
   return (
@@ -49,7 +79,10 @@ export function RestaurantHeader({ restaurant }: RestaurantHeaderProps) {
           className='cover-image'
           src={restaurant.restaurantCover}
         />
-        {/* 左上角角标先不写 */}
+        <view className='badge'>
+          <image className='badge-bg' src={badgeBg} />
+          <text className='badge-text'>心动榜</text>
+        </view>
       </view>
 
       <view className='right-content'>
@@ -74,11 +107,17 @@ export function RestaurantHeader({ restaurant }: RestaurantHeaderProps) {
         </view>
 
         <view className='tags-row'>
-          {restaurant.tags.map((tag, index) => (
-            <view key={index} className='tag'>
-              <text className='tag-text'>{tag}</text>
-            </view>
-          ))}
+          {restaurant.tags.map((tag, index) => {
+            const hasXindong = tag.includes('心动榜')
+            return (
+              <view
+                key={index}
+                className={hasXindong ? 'tag tag-with-xindong' : 'tag'}
+              >
+                {renderTagText(tag)}
+              </view>
+            )
+          })}
         </view>
       </view>
     </view>
