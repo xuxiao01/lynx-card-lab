@@ -3,6 +3,7 @@ import foodDefaultImage from '../../../assets/food-default.png'
 import food01Image from '../../../assets/food-01.png'
 import food02Image from '../../../assets/food-02.png'
 import food03Image from '../../../assets/food-03.png'
+import promoPillBg from '../../../assets/promo-pill-bg.png'
 import './DealCard.css'
 
 // 图片映射表：根据图片文件名（不包含 hash）映射到实际导入的图片
@@ -26,11 +27,6 @@ interface DealCardProps {
 export function DealCard({ deal }: DealCardProps) {
   // 获取第一个 badge，如果没有则显示空
   const badge = deal.badges && deal.badges.length > 0 ? deal.badges[0] : null
-  const badgeText = badge
-    ? badge.subText
-      ? `${badge.text} ${badge.subText}`
-      : badge.text
-    : ''
 
   // 根据图片路径获取对应的导入图片
   const imageSrc = getImageByPath(deal.dealImage)
@@ -38,10 +34,15 @@ export function DealCard({ deal }: DealCardProps) {
   return (
     <view className='deal-card'>
       <view className='image-wrapper'>
-        <image className='product-image' src={imageSrc} />
-        {badgeText && (
+        <image className='product-image' src={imageSrc} mode='aspectFill' />
+        {badge && (
           <view className='badge-bar'>
-            <text className='badge-text'>{badgeText}</text>
+            <view className='badge-text-wrapper' style={{ backgroundImage: `url(${promoPillBg})` }}>
+              <text className='badge-text'>{badge.text}</text>
+            </view>
+            {badge.subText && (
+              <text className='badge-sub-text'>{badge.subText}</text>
+            )}
           </view>
         )}
       </view>
